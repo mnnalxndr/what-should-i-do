@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/what-should-i-do/static/css/main.8ab6f918.chunk.css",
+    "main.css": "/what-should-i-do/static/css/main.649f801e.chunk.css",
     "main.js": "/what-should-i-do/static/js/main.55748547.chunk.js",
     "main.js.map": "/what-should-i-do/static/js/main.55748547.chunk.js.map",
     "runtime-main.js": "/what-should-i-do/static/js/runtime-main.92d9e1c3.js",
@@ -8,15 +8,15 @@
     "static/js/2.e054676b.chunk.js": "/what-should-i-do/static/js/2.e054676b.chunk.js",
     "static/js/2.e054676b.chunk.js.map": "/what-should-i-do/static/js/2.e054676b.chunk.js.map",
     "index.html": "/what-should-i-do/index.html",
-    "precache-manifest.f547c1475bc424d08fcd3f462e75af26.js": "/what-should-i-do/precache-manifest.f547c1475bc424d08fcd3f462e75af26.js",
+    "precache-manifest.c4950031049984ca5f5f99089685d514.js": "/what-should-i-do/precache-manifest.c4950031049984ca5f5f99089685d514.js",
     "service-worker.js": "/what-should-i-do/service-worker.js",
-    "static/css/main.8ab6f918.chunk.css.map": "/what-should-i-do/static/css/main.8ab6f918.chunk.css.map",
+    "static/css/main.649f801e.chunk.css.map": "/what-should-i-do/static/css/main.649f801e.chunk.css.map",
     "static/js/2.e054676b.chunk.js.LICENSE.txt": "/what-should-i-do/static/js/2.e054676b.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.92d9e1c3.js",
     "static/js/2.e054676b.chunk.js",
-    "static/css/main.8ab6f918.chunk.css",
+    "static/css/main.649f801e.chunk.css",
     "static/js/main.55748547.chunk.js"
   ]
 }
