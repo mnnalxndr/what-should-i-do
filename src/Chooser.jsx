@@ -9,7 +9,8 @@ const OPTIONS = {
   Both: [
     'Message a friend',
     'House chore',
-    'Free time!'
+    'Free time!',
+    'Dog Training'
   ],
   Tash: [
     'Carry on writing',
@@ -17,7 +18,7 @@ const OPTIONS = {
     'Blog',
     'Data Camp',
     'Piano',
-    'Dog Training'
+    'Pilates'
   ],
   Alex: [
     'Existing Band Idea',
@@ -25,7 +26,8 @@ const OPTIONS = {
     'New Thing',
     'Practice/Learn',
     'Coding course',
-    'Coding project'
+    'Coding project',
+    'Run'
   ]
 };
 
@@ -33,12 +35,19 @@ const Chooser = () => {
   const [person, setPerson] = useState(null);
   const [suggestion, setSuggestion] = useState('');
 
+  const getNewSuggestion = () => {
+    return options[Math.floor(Math.random() * options.length)]
+  }
   const chooseHandler = () => {
     const options = [
       ...OPTIONS.Both,
       ...OPTIONS[person]
     ];
-    setSuggestion(options[Math.floor(Math.random() * options.length)]);
+    let newSuggestion = getNewSuggestion();
+    while (newSuggestion === suggestion) {
+      newSuggestion = getNewSuggestion();
+    }
+    setSuggestion(newSuggestion);
   }
 
   const setPersonHandler = (person) => {
