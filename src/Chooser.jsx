@@ -71,13 +71,13 @@ const Chooser = () => {
       </div>
       {person ? 
         <div>
-          <h3>{suggestion}</h3>
           <button
             type='button'
             onClick={chooseHandler}
           >Suggest {suggestion === '' ? '' : 'another '}activity for {person}</button>
         </div> :
         null }
+        <h3>{suggestion}</h3>
     </div>
   );
 }
