@@ -36,13 +36,13 @@ const Chooser = () => {
   const [suggestion, setSuggestion] = useState('');
 
   const getNewSuggestion = () => {
-    return options[Math.floor(Math.random() * options.length)]
-  }
-  const chooseHandler = () => {
     const options = [
       ...OPTIONS.Both,
       ...OPTIONS[person]
     ];
+    return options[Math.floor(Math.random() * options.length)]
+  }
+  const chooseHandler = () => {
     let newSuggestion = getNewSuggestion();
     while (newSuggestion === suggestion) {
       newSuggestion = getNewSuggestion();
