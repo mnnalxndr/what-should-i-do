@@ -18,13 +18,16 @@ const OPTIONS = {
     'Blog',
     'Data Camp',
     'Piano',
-    'Pilates'
+    'Pilates',
+    'Drawing',
+    'Gardening'
   ],
   Alex: [
-    'Existing Band Idea',
-    'Existing Solo Idea',
-    'New Thing',
+    'Band Idea',
+    'Solo Idea',
+    'Electronic Idea',
     'Practice/Learn',
+    'Music Course',
     'Coding course',
     'Coding project',
     'Run'
