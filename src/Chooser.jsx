@@ -5,6 +5,12 @@ const PERSONS = {
   TASH: 'Tash'
 }
 
+const MUSIC_COURSE = 'Music Course';
+const MUSIC_PROJECT = 'Music Project';
+const CODING_COURSE = 'Coding Course';
+const CODING_PROJECT = 'Conding Project';
+const PRACTICE_LEARN = 'Practise/Learn';
+
 const OPTIONS = {
   Both: [
     'Message a friend',
@@ -23,16 +29,45 @@ const OPTIONS = {
     'Gardening'
   ],
   Alex: [
-    'Band Idea',
-    'Solo Idea',
-    'Electronic Idea',
-    'Practice/Learn',
-    'Music Course',
-    'Coding course',
-    'Coding project',
+    MUSIC_PROJECT,
+    MUSIC_COURSE,
+    PRACTICE_LEARN,
+    CODING_COURSE,
+    CODING_PROJECT,
     'Run'
   ]
 };
+
+const MUSIC_PROJECT_OPTIONS = [
+  'Outcries',
+  'Codices',
+  'Solo',
+  'Electronic'
+];
+const MUSIC_COURSE_OPTIONS = [
+  'Logic',
+  'Ableton',
+  'Endless',
+  'Syntorial',
+  'Genre'
+];
+const PRACTICE_LEARN_OPTIONS = [
+  'Drums',
+  'Guitar',
+  'Piano'
+];
+const CODING_COURSE_OPTIONS = [
+  'React',
+  'Pluralsight',
+  'Juce',
+  'Audioprogrammer',
+  'BrowserNoise',
+  'Javascript Visualisation'
+];
+const CODING_PROJECT_OPTIONS = [
+  'What Should I Do',
+  'Work'
+];
 
 const Chooser = () => {
   const [person, setPerson] = useState(null);
