@@ -38,58 +38,87 @@ const OPTIONS = {
   ]
 };
 
-const MUSIC_PROJECT_OPTIONS = [
-  'Outcries',
-  'Codices',
-  'Solo',
-  'Electronic'
-];
-const MUSIC_COURSE_OPTIONS = [
-  'Logic',
-  'Ableton',
-  'Endless',
-  'Syntorial',
-  'Genre'
-];
-const PRACTICE_LEARN_OPTIONS = [
-  'Drums',
-  'Guitar',
-  'Piano'
-];
-const CODING_COURSE_OPTIONS = [
-  'React',
-  'Pluralsight',
-  'Juce',
-  'Audioprogrammer',
-  'BrowserNoise',
-  'Javascript Visualisation'
-];
-const CODING_PROJECT_OPTIONS = [
-  'What Should I Do',
-  'Work'
-];
+const SPECIFIC_OPTIONS = {
+  [MUSIC_PROJECT]: [
+    'Outcries',
+    'Codices',
+    'Solo',
+    'Electronic'
+  ],
+  [MUSIC_COURSE]: [
+    'Logic',
+    'Ableton',
+    'Endless',
+    'Syntorial',
+    'Genre'
+  ],
+  [PRACTICE_LEARN]: [
+    'Drums',
+    'Guitar',
+    'Piano'
+  ],
+  [CODING_COURSE]: [
+    'React',
+    'Pluralsight',
+    'Juce',
+    'Audioprogrammer',
+    'BrowserNoise',
+    'Javascript Visualisation'
+  ],
+  [CODING_PROJECT]: [
+    'What Should I Do',
+    'Work'
+  ]
+}
 
 const Chooser = () => {
   const [person, setPerson] = useState(null);
   const [suggestion, setSuggestion] = useState('');
+  const [showSpecific, setShowSpecific] = useState(false);
+  const [specific, setSpecific] = useState('');
+
+  const randomOption = (array) => {
+    return array[Math.floor(Math.random() * array.length)];
+  }
 
   const getNewSuggestion = () => {
     const options = [
       ...OPTIONS.Both,
       ...OPTIONS[person]
     ];
-    return options[Math.floor(Math.random() * options.length)]
+    return randomOption(options);
   }
-  const chooseHandler = () => {
+
+  const getSpecific = () => {
+    return randomOption(SPECIFIC_OPTIONS[suggestion]);
+  }
+
+  const mainChooseHandler = () => {
     let newSuggestion = getNewSuggestion();
     while (newSuggestion === suggestion) {
       newSuggestion = getNewSuggestion();
     }
+    if ([MUSIC_PROJECT, MUSIC_COURSE, PRACTICE_LEARN, CODING_COURSE, CODING_PROJECT].includes(newSuggestion)) {
+      setShowSpecific(true);
+      setSpecific('');
+    } else {
+      setShowSpecific(false);
+    }
     setSuggestion(newSuggestion);
+  }
+
+  const secondaryChooseHandler = () => {
+    let newSpecific = getSpecific();
+    while (newSpecific === specific) {
+      newSpecific = getSpecific();
+    }
+    setSpecific(newSpecific);
   }
 
   const setPersonHandler = (person) => {
     setSuggestion('');
+    setSpecific('');
+    setShowSpecific(false);
     setPerson(person);
   }
 
@@ -111,11 +140,22 @@ const Chooser = () => {
         <div>
           <button
             type='button'
-            onClick={chooseHandler}
+            onClick={mainChooseHandler}
           >Suggest {suggestion === '' ? '' : 'another '}activity for {person}</button>
         </div> :
-        null }
-        <h3>{suggestion}</h3>
+        null
+      }
+      <h3>{suggestion}</h3>
+      {showSpecific ?
+        <>
+          <button
+            type='button'
+            onClick={secondaryChooseHandler}
+          >{specific === '' ? 'Be more specific' : 'Try again'}</button>
+          <h3>{specific}</h3>
+        </> :
+        null
+      }
     </div>
   );
 }
