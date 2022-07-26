@@ -43,14 +43,16 @@ const SPECIFIC_OPTIONS = {
     'Outcries',
     'Codices',
     'Solo',
-    'Electronic'
+    'Electronic',
+    'Workflow'
   ],
   [MUSIC_COURSE]: [
     'Logic',
     'Ableton',
-    'Endless',
+    'Endlesss',
     'Syntorial',
-    'Genre'
+    'Genre',
+    'Theory'
   ],
   [PRACTICE_LEARN]: [
     'Drums',
@@ -60,10 +62,11 @@ const SPECIFIC_OPTIONS = {
   [CODING_COURSE]: [
     'React',
     'Pluralsight',
-    'Juce',
+    'JUCE',
     'Audioprogrammer',
     'BrowserNoise',
-    'Javascript Visualisation'
+    'Javascript Visualisation',
+    'Android'
   ],
   [CODING_PROJECT]: [
     'What Should I Do',
